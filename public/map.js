@@ -1,7 +1,8 @@
-var Map = function(latLng, zoomNumber) {
+var Map = function(latLng, zoomNumber, mapTypeId) {
   this.googleMap = new google.maps.Map(document.getElementById('map'), {
     center: latLng,
-    zoom: zoomNumber
+    zoom: zoomNumber,
+    mapTypeId: mapTypeId
   }),
   this.addMarker = function(latLng, title, icon) {
     var marker = new google.maps.Marker({
@@ -31,18 +32,14 @@ var Map = function(latLng, zoomNumber) {
       });
       infoWindow.open(this.map, marker);
     });
-  },
-  this.airpotDirectionsRequest = function() {
-    var airportDirectionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
-    var org = new google.maps.LatLng(55.9442174,-3.1306679);
-    var dest = new google.maps.LatLng(55.9506709,-3.361478);
-    var request = {
-      origin: org,
-      destination: dest,
-      travelMode: google.maps.DirectionsTravelMode.TRANSIT
-    };
-    directionsService = new google.maps.DirectionsService();
-    directionsService.route(request);
   }
 
+          
+
+
+
+
+
 }
+
+
